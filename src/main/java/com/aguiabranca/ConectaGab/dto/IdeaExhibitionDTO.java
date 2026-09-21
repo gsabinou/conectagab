@@ -15,6 +15,7 @@ public record IdeaExhibitionDTO(
         Priority prioridade,
         String impactoEsperado,
         List<String> tags,
+        @com.fasterxml.jackson.annotation.JsonFormat(pattern = "dd/MM/yyyy")
         LocalDate dataCriacao,
         StrategicGuideline estrategia
 ) {

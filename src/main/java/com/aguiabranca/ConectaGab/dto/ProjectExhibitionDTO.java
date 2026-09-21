@@ -14,9 +14,13 @@ public record ProjectExhibitionDTO(
         ProjectStatus status,
         Priority prioridade,
         Risk risco,
+        @com.fasterxml.jackson.annotation.JsonFormat(pattern = "dd/MM/yyyy")
         LocalDate dataInicioPrevista,
+        @com.fasterxml.jackson.annotation.JsonFormat(pattern = "dd/MM/yyyy")
         LocalDate dataFimPrevista,
+        @com.fasterxml.jackson.annotation.JsonFormat(pattern = "dd/MM/yyyy")
         LocalDate dataInicioReal,
+        @com.fasterxml.jackson.annotation.JsonFormat(pattern = "dd/MM/yyyy")
         LocalDate dataFimReal,
         StatusPrazo statusPrazo,
         Double investimentoEstimado,

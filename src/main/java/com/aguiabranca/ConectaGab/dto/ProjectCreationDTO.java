@@ -2,6 +2,7 @@ package com.aguiabranca.ConectaGab.dto;
 
 import com.aguiabranca.ConectaGab.model.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -28,13 +29,17 @@ public record ProjectCreationDTO(
         Risk risco,
 
         @NotBlank(message = "A data de início prevista é obrigatória")
+        @com.fasterxml.jackson.annotation.JsonFormat(pattern = "dd/MM/yyyy")
         LocalDate dataInicioPrevista,
 
-        @NotBlank(message = "A data de fim prevista é obrigatória")
+        @NotNull(message = "A data fim prevista deve ser informada")
+        @com.fasterxml.jackson.annotation.JsonFormat(pattern = "dd/MM/yyyy")
         LocalDate dataFimPrevista,
 
+        @com.fasterxml.jackson.annotation.JsonFormat(pattern = "dd/MM/yyyy")
         LocalDate dataInicioReal,
 
+        @com.fasterxml.jackson.annotation.JsonFormat(pattern = "dd/MM/yyyy")
         LocalDate dataFimReal,
 
         StatusPrazo statusPrazo,

@@ -2,6 +2,7 @@ package com.aguiabranca.ConectaGab.dto;
 
 import com.aguiabranca.ConectaGab.model.StrategicGuideline;
 import jakarta.validation.constraints.NotBlank;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.time.LocalDate;
 
@@ -16,6 +17,8 @@ public record GuideCreationDTO(
 
         @NotBlank(message = "Categoria não informada")
         String categoria,
+
+        @JsonFormat(pattern = "dd/MM/yyyy")
         LocalDate data,
         Boolean ativo
 ) {

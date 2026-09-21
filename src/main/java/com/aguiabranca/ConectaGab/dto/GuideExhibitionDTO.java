@@ -9,6 +9,7 @@ public record GuideExhibitionDTO(
         String titulo,
         String descricao,
         String categoria,
+        @com.fasterxml.jackson.annotation.JsonFormat(pattern = "dd/MM/yyyy")
         LocalDate data,
         Boolean ativo
 ) {
